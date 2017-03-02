@@ -1,0 +1,26 @@
+{
+  "name": "webvr-smasher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "budo index.js:build.js --port 8000 --live --open",
+    "predeploy": "npm run build",
+    "deploy": "ghpages -p _prod",
+    "deploy:caseyyee": "GHPAGES_REPO=\"caseyyee/webvr-smasher\" npm run deploy",
+    "deploy:casey": "npm run deploy:caseyyee",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aframe": "^0.5.0",
+    "aframe-daydream-controller-component": "^1.0.0",
+    "aframe-firebase-component": "^4.0.1",
+    "aframe-gradient-sky": "^1.0.4",
+    "aframe-ui-widgets": "^1.0.2",
+    "budo": "^9.4.7",
+    "firebase": "^3.7.0"
+  }
+}
