@@ -75,10 +75,15 @@
       <a-entity light="color:#FFE5D5; groundColor:#B1B9FF; intensity:0.9;" position="40 11 -50" data-aframe-default-light="" aframe-injected=""></a-entity>
 
       <!-- controls -->
-      <a-entity hand-controls="left"></a-entity>
-      <a-entity hand-controls="right"></a-entity>
+      <a-entity id="remote" daydream-controller raycaster="objects: .selectable">
+        <a-cone id="ray" color="cyan" position="0 0 -2" rotation="-90 0 0" radius-bottom="0.005" radius-top="0.001" height="4"></a-cone>
+        <a-box id="position-guide" visible="false" position="0 0 -2"></a-box>
+      </a-entity>
 
-      <a-entity daydream-controller geometry="primitive: sphere; radius: 0.1" material="color: red"></a-entity>
+      <!-- <a-entity position="0 1.5 0" camera look-controls></a-entity> -->
+
+      <!-- <a-entity hand-controls="left"></a-entity>
+      <a-entity hand-controls="right"></a-entity> -->
 
       <!-- <a-camera>
         <a-entity cursor
