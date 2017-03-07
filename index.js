@@ -1,6 +1,5 @@
 require('aframe');
 require('aframe-daydream-controller-component');
-require('aframe-firebase-component');
 require('aframe-gradient-sky');
 require('aframe-ui-widgets');
 require('aframe-dev-components');
