@@ -5,18 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node server/server.js",
-    "build": "npm run mkdir:js && browserify client/js/index.js -o build/index.js",
-
+    "dev": "npm run watch & node server/server.js",
+    "watch": "watchify client/js/index.js -o build/index.js -v",
+    "build": "npm run mkdir && browserify client/js/index.js -o build/index.js",
     "predeploy": "npm run build",
-
     "deploy": "ghpages -p _prod",
     "deploy:caseyyee": "GHPAGES_REPO=\"caseyyee/webvr-smasher\" npm run deploy",
     "deploy:casey": "npm run deploy:caseyyee",
-
-    "mkdir:js": "mkdir -p build",
-
+    "mkdir": "mkdir -p build",
     "easyrtc-install": "cd ./node_modules/easyrtc; npm install; cd ../../server; npm install; cd ../"
-
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +26,7 @@
     "easyrtc": "^1.1.0",
     "express": "^4.15.2",
     "networked-aframe": "^0.1.0",
-    "serve-static": "^1.12.1"
+    "serve-static": "^1.12.1",
+    "watchify": "^3.9.0"
   }
 }
