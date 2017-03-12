@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "budo index.js:build.js --port 8000 --live --open",
+    "start": "npm run build && node server/server.js",
+    "build": "npm run mkdir:js && browserify client/js/index.js -o build/index.js",
+
     "predeploy": "npm run build",
+
     "deploy": "ghpages -p _prod",
     "deploy:caseyyee": "GHPAGES_REPO=\"caseyyee/webvr-smasher\" npm run deploy",
     "deploy:casey": "npm run deploy:caseyyee",
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "mkdir:js": "mkdir -p build",
+
+    "easyrtc-install": "cd ./node_modules/easyrtc; npm install; cd ../../server; npm install; cd ../"
+
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +25,10 @@
     "aframe-daydream-controller-component": "^1.0.0",
     "aframe-gradient-sky": "^1.0.4",
     "aframe-ui-widgets": "^1.0.2",
-    "budo": "^9.4.7"
+    "browserify": "^14.1.0",
+    "easyrtc": "^1.1.0",
+    "express": "^4.15.2",
+    "networked-aframe": "^0.1.0",
+    "serve-static": "^1.12.1"
   }
 }

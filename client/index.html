@@ -9,10 +9,10 @@
     <link rel="manifest" href="manifest.webmanifest">
     <!-- <script async defer src="https://agent.webvr.rocks/client.js"></script> -->
     <!-- <script async defer src="http://0.0.0.0:4040/client.js"></script> -->
-    <script src="build.js"></script>
+    <script src="/js/index.js"></script>
   </head>
   <body>
-    <a-scene game>
+    <a-scene game multiuser>
       <a-assets>
         <a-mixin id="box" geometry="primitive: cylinder; radius: 0.1; height: 0.2" material="color: #536188"></a-mixin>
         <a-mixin id="gopher" geometry="primitive: sphere; radius: 0.08;"></a-mixin>

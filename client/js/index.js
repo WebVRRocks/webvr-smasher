@@ -3,7 +3,8 @@ require('aframe-daydream-controller-component');
 require('aframe-gradient-sky');
 require('aframe-ui-widgets');
 require('aframe-dev-components');
-require('./components/follow')
+require('networked-aframe');
+require('./multiuser');
 
 AFRAME.registerComponent('game', {
   init: function () {
