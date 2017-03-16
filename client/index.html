@@ -9,14 +9,26 @@
     <link rel="manifest" href="manifest.webmanifest">
     <!-- <script async defer src="https://agent.webvr.rocks/client.js"></script> -->
     <!-- <script async defer src="http://0.0.0.0:4040/client.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="easyrtc/easyrtc.js"></script>
     <script src="/js/index.js"></script>
+    <script>
+      function onConnect () {
+        console.log('on connect');
+        NAF.entities.createAvatar('#avatar-template', '0 1.6 0', '0 0 0');
+      }
+    </script>
   </head>
   <body>
-    <a-scene game multiuser>
+    <a-scene game multiuser network-scene>
       <a-assets>
         <a-mixin id="box" geometry="primitive: cylinder; radius: 0.1; height: 0.2" material="color: #536188"></a-mixin>
         <a-mixin id="gopher" geometry="primitive: sphere; radius: 0.08;"></a-mixin>
         <a-mixin id="up" position="0 0.15 0"></a-mixin>
+
+        <script id="avatar-template" type="text/html">
+          <a-sphere></a-sphere>
+        </script>
       </a-assets>
       <a-gradient-sky material="shader: gradient; topColor: 127 204 255; bottomColor: 213 245 255"></a-gradient-sky>
 
