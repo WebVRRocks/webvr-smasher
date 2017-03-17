@@ -20,14 +20,46 @@
     </script>
   </head>
   <body>
-    <a-scene game multiuser network-scene>
+    <a-scene game multiuser network-scene="audio: true;">
       <a-assets>
         <a-mixin id="box" geometry="primitive: cylinder; radius: 0.1; height: 0.2" material="color: #536188"></a-mixin>
         <a-mixin id="gopher" geometry="primitive: sphere; radius: 0.08;"></a-mixin>
         <a-mixin id="up" position="0 0.15 0"></a-mixin>
 
         <script id="avatar-template" type="text/html">
-          <a-sphere></a-sphere>
+          <a-entity class="avatar">
+            <a-sphere class="head"
+              color="#5985ff"
+              scale="0.45 0.5 0.4"
+              random-color
+            ></a-sphere>
+            <a-entity class="face"
+              position="0 0.05 0"
+            >
+              <a-sphere class="eye"
+                color="#efefef"
+                position="0.16 0.1 -0.35"
+                scale="0.12 0.12 0.12"
+              >
+                <a-sphere class="pupil"
+                  color="#000"
+                  position="0 0 -1"
+                  scale="0.2 0.2 0.2"
+                ></a-sphere>
+              </a-sphere>
+              <a-sphere class="eye"
+                color="#efefef"
+                position="-0.16 0.1 -0.35"
+                scale="0.12 0.12 0.12"
+              >
+                <a-sphere class="pupil"
+                  color="#000"
+                  position="0 0 -1"
+                  scale="0.2 0.2 0.2"
+                ></a-sphere>
+              </a-sphere>
+            </a-entity>
+          </a-entity>
         </script>
       </a-assets>
       <a-gradient-sky material="shader: gradient; topColor: 127 204 255; bottomColor: 213 245 255"></a-gradient-sky>
@@ -60,7 +92,11 @@
 
       <!-- controls -->
       <a-entity id="remote" daydream-controller raycaster="objects: .selectable">
-        <a-cone id="ray" color="cyan" position="0 0 -2" rotation="-90 0 0" radius-bottom="0.005" radius-top="0.001" height="4"></a-cone>
+        <a-entity position="0 0 -0.5">
+          <a-entity id="handle" position="0 0 0"  rotation="-90 0 0" geometry="primitive: cylinder; radius: 0.03; height: 0.25" material="color: #C26043"></a-entity>
+          <a-entity id="head" position="0 0 -0.18"  rotation="0 0 0" geometry="primitive: cylinder; radius: 0.06; height: 0.25" material="color: #C26043"></a-entity>
+        </a-entity>
+
         <a-box id="position-guide" visible="false" position="0 0 -2"></a-box>
       </a-entity>
 
