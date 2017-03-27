@@ -1,16 +1,16 @@
-require('aframe');
+var AFRAME = require('aframe');
 require('aframe-daydream-controller-component');
 require('aframe-gradient-sky');
 require('aframe-ui-widgets');
 require('aframe-dev-components');
 require('networked-aframe');
-require('./multiuser');
+require('./multiuser')(AFRAME);
 
 AFRAME.registerComponent('game', {
   init: function () {
     var self = this;
 
-    var startButton = document.querySelector("#start");
+    var startButton = document.querySelector('#start');
     startButton.addEventListener('click', function (e) {
       console.log('start clicked!');
     });
@@ -28,13 +28,13 @@ AFRAME.registerComponent('game', {
       var mixin = 'gopher';
       if (Math.random() >= 0.5) mixin += ' up';
       gopher.children[0].setAttribute('mixin', mixin);
-    }
+    };
 
     var randomTimeout = function () {
       popGopher();
       var random = Math.round(Math.random() * (1000 - 100)) + 100;
       setTimeout(randomTimeout, random);
-    }
+    };
 
     randomTimeout();
 

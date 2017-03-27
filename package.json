@@ -1,22 +1,24 @@
 {
   "name": "webvr-smasher",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mash and smash!",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node server/server.js",
-    "dev": "npm run watch & node server/server.js",
-    "watch": "watchify client/js/index.js -o build/index.js -v",
-    "build": "npm run mkdir && browserify client/js/index.js -o build/index.js",
+    "start": "npm run dev",
+    "dev": "npm run watch & cross-env NODE_ENV=development node ./server/server.js",
+    "prod": "npm run build && cross-env NODE_ENV=production node ./server/server.js",
+    "prewatch": "shx mkdir -p _build",
+    "watch": "watchify client/js/index.js -o _build/index.js -v",
+    "prebuild": "shx mkdir -p _build",
+    "build": "browserify client/js/index.js -o _build/index.js",
     "predeploy": "npm run build",
-    "deploy": "ghpages -p _prod",
-    "deploy:caseyyee": "GHPAGES_REPO=\"caseyyee/webvr-smasher\" npm run deploy",
-    "deploy:casey": "npm run deploy:caseyyee",
-    "mkdir": "mkdir -p build",
-    "easyrtc-install": "cd ./node_modules/easyrtc; npm install;"
+    "easyrtc-install": "shx cd ./node_modules/easyrtc && npm install",
+    "favicon": "convert -density 400 -background transparent client/img/icon-190.png -define icon:auto-resize=16,32,48,64,128 -colors 256 client/favicon.ico",
+    "postinstall": "npm run easyrtc-install",
+    "lint": "semistandard -v | snazzy"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Casey Yee <caseyyee.ca@gmail.com>",
+  "license": "CC0-1.0",
   "dependencies": {
     "aframe": "^0.5.0",
     "aframe-daydream-controller-component": "^1.0.0",
@@ -24,11 +26,19 @@
     "aframe-gradient-sky": "^1.0.4",
     "aframe-ui-widgets": "^1.0.2",
     "browserify": "^14.1.0",
+    "cors": "^2.8.1",
+    "cross-env": "^3.2.4",
     "easyrtc": "^1.1.0",
     "express": "^4.15.2",
+    "ip": "^1.1.5",
     "networked-aframe": "^0.1.0",
-    "serve-static": "^1.12.1",
     "socket.io": "^1.7.3",
     "watchify": "^3.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "semistandard": "^10.0.0",
+    "shx": "^0.2.2",
+    "snazzy": "^6.0.0"
   }
 }

@@ -10,18 +10,20 @@
   "background_color": "#000",
   "icons": [
     {
-      "src": "https://webvr.rocks/rocks/logo-256.svg",
-      "sizes": "256x256",
-      "type": "image/svg"
+      "src": "img/icon-190.png",
+      "sizes": "190x190",
+      "type": "image/png",
+      "density": "2"
     },
     {
-      "src": "https://webvr.rocks/rocks/logo-256.png",
-      "sizes": "256x256",
-      "type": "image/png"
+      "src": "img/icon-64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "density": "2"
     },
     {
-      "src": "https://webvr.rocks/favicon.ico",
-      "sizes": "16x16 32x32 48x48 64x64 256x256",
+      "src": "favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64 128x128",
       "type": "image/x-icon"
     }
   ],
