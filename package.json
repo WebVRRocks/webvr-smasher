@@ -32,13 +32,13 @@
     "express": "^4.15.2",
     "ip": "^1.1.5",
     "networked-aframe": "^0.1.0",
+    "shx": "^0.2.2",
     "socket.io": "^1.7.3",
     "watchify": "^3.9.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
     "semistandard": "^10.0.0",
-    "shx": "^0.2.2",
     "snazzy": "^6.0.0"
   }
 }
