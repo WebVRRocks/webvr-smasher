@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/caseyyee/webvr-smasher/master/client/img/icon-190.png" alt="WebVR Smasher" title="WebVR Smasher" width="220">
+[<img src="https://raw.githubusercontent.com/caseyyee/webvr-smasher/master/client/img/icon-190.png" alt="WebVR Smasher" title="WebVR Smasher" width="220">](https://webvr.yoga/)
 
 # WebVR Smasher
 
