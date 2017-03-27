@@ -13,11 +13,14 @@ var app = express();
 app.use('/js/', serveStatic('build'));
 app.use(serveStatic('client', {'index': ['index.html']}));
 
-// Start Express http server on port 8080
-var webServer = http.createServer(app).listen(8080);
+// Start Express http server.
+const HOST = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT || 8080;
+
+const webServer = http.createServer(app);
 
 // Start Socket.io so it attaches itself to Express server
-var socketServer = socketIo.listen(webServer, {"log level":1});
+var socketServer = socketIo.listen(webServer, {"log level": 1});
 
 var myIceServers = [
   {"url":"stun:stun.l.google.com:19302"},
@@ -72,7 +75,7 @@ var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
     });
 });
 
-//listen on port 8080
-webServer.listen(8080, function () {
-    console.log('listening on http://localhost:8080');
+webServer.listen(PORT, HOST, () => {
+  serverHost = `${HOST}:${webServer.address().port}`;
+  console.log('[%s] Listening on %s', app.settings.env, serverHost);
 });
