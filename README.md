@@ -30,7 +30,13 @@ npm start
 
 ## Deployment
 
-Commits pushed to the upstream GitHub repo are automatically deployed to [this Heroku instance](https://webvr.yoga/).
+Commits pushed to the [upstream GitHub repo](https://github.com/webvrrocks/webvr-smasher) are automatically deployed to [this Heroku instance](https://webvr.yoga/).
+
+If you're developing in a different remote repo, you can trigger a deploy:
+
+```bash
+npm run deploy
+```
 
 The production server is run [like so](Procfile):
 
