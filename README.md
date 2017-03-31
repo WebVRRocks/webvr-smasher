@@ -6,6 +6,7 @@ Mash and smash!
 
 [**Play now!**](https://webvr.yoga/)
 
+[WebVR Smasher](https://raw.githubusercontent.com/caseyyee/webvr-smasher/master/img/preview.gif)
 
 ## Local development
 
