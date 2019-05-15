@@ -1,19 +1,17 @@
-[<img src="https://raw.githubusercontent.com/caseyyee/webvr-smasher/master/client/img/icon-190.png" alt="WebVR Smasher" title="WebVR Smasher" width="220">](https://webvr.yoga/)
+<img src="https://raw.githubusercontent.com/webvrrocks/webvr-smasher/master/client/img/icon-190.png" alt="WebVR Smasher" title="WebVR Smasher" width="220">
 
-# [WebVR Smasher](https://webvr.yoga/)
+# WebVR Smasher
 
 Mash and smash!
 
-[**Play now!**](https://webvr.yoga/)
-
-[![WebVR Smasher](https://raw.githubusercontent.com/caseyyee/webvr-smasher/master/img/preview.gif "WebVR Smasher")](https://webvr.yoga/)
+![WebVR Smasher](https://raw.githubusercontent.com/webvrrocks/webvr-smasher/master/img/preview.gif "WebVR Smasher")
 
 ## Local development
 
 First, clone this repo:
 
 ```bash
-git clone git@github.com:caseyyee/webvr-smasher.git && cd webvr-smasher
+git clone git@github.com:webvrrocks/webvr-smasher.git && cd webvr-smasher
 ```
 
 To install the [Node](https://nodejs.org/en/download/) dependencies:
@@ -31,7 +29,7 @@ npm start
 
 ## Deployment
 
-Commits pushed to the [upstream GitHub repo](https://github.com/webvrrocks/webvr-smasher) are automatically deployed to [this Heroku instance](https://webvr.yoga/).
+You can deploy this project to [Heroku](https://www.heroku.com).
 
 If you're developing in a different remote repo, you can trigger a deploy:
 
